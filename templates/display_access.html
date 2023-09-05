@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2><i>Data in AccessRecords</i></h2>
+
+        <table border="2px">
+            <tr>
+                <td>PK</td>
+                <td>Name</td>
+                <td>Date</td>
+                <td>Author</td>
+                <td>Email</td>
+            </tr>
+            {% for ao in qsao %}
+            <tr>
+                <td>{{ao.pk}}</td>
+                <td>{{ao.name}}</td>
+                <td>{{ao.date}}</td>
+                <td>{{ao.author}}</td>
+                <td>{{ao.email}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

@@ -22,4 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('insert_webpage/',insert_webpage,name='insert_webpage'),
     path('insert_access/',insert_access,name='insert_access'),
+    path('select_and_display/',select_and_display,name='select_and_display'),
+    path('checkbox/',checkbox,name='checkbox'),
+    path('New_one/',New_one,name='New_one'),
 ]

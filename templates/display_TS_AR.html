@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2><i>Webpage data</i></h2>
+        <table border="2px">
+            <tr>
+                <th>Pk</th>
+                <th>topic_name</th>
+                <th>Name</th>
+                <th>Url</th>
+
+            </tr>
+            {% for tn in QSWO %}
+                <tr>
+                    <td>{{tn.pk}}</td>
+                    <td>{{tn.topic_name}}</td>
+                    <td>{{tn.name}}</td>
+                    <td>{{tn.url}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <h2><i>Accessrecords data</i></h2>
+        <table border="2px">
+            <tr>
+                <td>Pk</td>
+                <td>Name</td>
+                <td>Date</td>
+                <td>Author</td>
+                <td>Email</td>
+            </tr>
+            {% for ar in QSAO %}
+            <tr>
+                <td>{{ar.pk}}</td>
+                <td>{{ar.name}}</td>
+                <td>{{ar.date}}</td>
+                <td>{{ar.author}}</td>
+                <td>{{ar.email}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

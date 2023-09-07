@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>select topic name to get webpage and Accessrecord</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for i in QSWO %}
+                <input type="checkbox" name="tn" id="tn" value="{{i.topic_name}}">
+                <label for="tn">{{i.topic_name}}</label> <br><br>
+            {% endfor %}
+        </form>
+    </center>
+</body>
+</html>

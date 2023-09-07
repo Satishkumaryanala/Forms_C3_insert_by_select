@@ -25,4 +25,6 @@ urlpatterns = [
     path('select_and_display/',select_and_display,name='select_and_display'),
     path('checkbox/',checkbox,name='checkbox'),
     path('New_one/',New_one,name='New_one'),
+    path('radioDel',radioDel,name='radioDel'),
+    path('updatewebpage/',updatewebpage,name='updatewebpage'),
 ]

@@ -12,9 +12,17 @@
             {% csrf_token %}
 
             {% for i in QSWO %}
-                <input type="checkbox" name="tn" id="tn" value="{{i.topic_name}}">
-                <label for="tn">{{i.topic_name}}</label> <br><br>
+                <input type="radio" name="pk" id="pk" value="{{i.pk}}">
+                <label for="pk">{{i.name}}</label> <br><br>
             {% endfor %}
+
+            <label for="na">Enter name to update</label>
+            <input type="text" name="na" id="na"><br><br>
+
+            <label for="ur">Enter url to update</label>
+            <input type="url" name="ur" id="ur"><br><br>
+
+            <input type="submit" value="Update webpage">
         </form>
     </center>
 </body>

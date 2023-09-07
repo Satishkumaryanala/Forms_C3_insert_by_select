@@ -84,3 +84,28 @@ def New_one(request):
         return render(request,'display_TS_AR.html',d1)
             
     return render(request,'select_and_display.html',d)
+
+
+def radioDel(request):
+    QSWO = webpage.objects.all()
+    d={'QSWO':QSWO}
+    if request.method == 'POST':
+        pk = request.POST['na']
+        webpage.objects.filter(pk=pk).delete()
+        QSWO = webpage.objects.all()
+        QSAO = AccessRecord.objects.all()
+        return render(request,'display_TS_AR.html',{'QSWO':QSWO,'QSAO':QSAO})
+
+    return render(request,'radio_AR.html',d)
+
+
+def updatewebpage(request):
+    QSWO = webpage.objects.all()
+    if request.method == 'POST':
+        pk = request.POST['pk']
+        na = request.POST.get('na')
+        ur = request.POST.get('ur')
+        webpage.objects.filter(pk=pk).update(name=na,url=ur)
+        QSWO = webpage.objects.all()
+        return render(request,'display_webpage.html',{'QSWO':QSWO})
+    return render(request,'update_webpage.html',{'QSWO':QSWO})
